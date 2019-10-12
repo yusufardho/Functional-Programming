@@ -2,6 +2,8 @@ import Data.Maybe -- isJust
 
 -- 1.1 Define the length function using map and sum.
 len lis = sum(map (+1) (map (*0) lis))
+-- 1.1 alternative answer
+length' xs = sum $ map ($1) xs
 
 -- 1.2
 -- map (+1) (map (+1) xs) nambahin semua elemen xs+2
