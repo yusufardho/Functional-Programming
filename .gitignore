@@ -1,0 +1,8 @@
+# ignore all .o
+*.o
+
+# ignore all .hi
+*.hi
+
+# ignore .DS_Store
+*.DS_Store
