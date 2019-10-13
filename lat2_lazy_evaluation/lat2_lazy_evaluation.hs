@@ -7,7 +7,7 @@ import Data.List -- (//)
 -- [5,6,7]
 
 -- 2
-divisor n = [x | x <-[n, n-1 .. 1], n `mod` x == 0]
+divisor n = [x | x <-[1, 2 .. n], n `mod` x == 0]
 
 -- 3, quicksort
 qs [] = []
