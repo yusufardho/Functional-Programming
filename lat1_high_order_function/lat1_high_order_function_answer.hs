@@ -54,6 +54,7 @@ soal4a' xys = map ((+3) . fst) xys
 
 -- 2.5a
 soal5a xys = map ((+4) . fst) (filter (\(x,y) -> x+y < 5) xys)
+soal5a' xys = map (\(x,_) -> x+4) (filter (\(x,y) -> x+y < 5) xys)
 
 -- 2.6a
 soal6a mxs = map (\(Just x) -> x+5) (filter isJust mxs)
