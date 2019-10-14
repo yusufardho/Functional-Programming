@@ -58,3 +58,4 @@ compo x = (double . square) x -- = double(square(x))
 -- (+) 2 3 = 5
 -- (++) [2] [3] = [2,3]
 -- (:) 2 [3] = [2,3]
+-- concat [[2],[3]] = [2,3]
