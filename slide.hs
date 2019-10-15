@@ -59,3 +59,6 @@ compo x = (double . square) x -- = double(square(x))
 -- (++) [2] [3] = [2,3]
 -- (:) 2 [3] = [2,3]
 -- concat [[2],[3]] = [2,3]
+-- head [1,2,3] = 1
+-- tail [1,2,3] = [2,3]
+-- last [1,2,3] = 3
