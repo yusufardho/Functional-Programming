@@ -1,10 +1,6 @@
 -- A: Bahasa Aritmatika Sederhana
 
-data Expr = C Float | Expr :+ Expr | Expr :- Expr
-          | Expr :* Expr | Expr :/ Expr 
-          | V [Char]
-          | Let String Expr Expr      
-     deriving Show
+
 
 -- 1
 
@@ -35,6 +31,12 @@ evaluate (V v)         = 0.0
 -- 21
 
 -- 3
+data Expr = C Float | Expr :+ Expr | Expr :- Expr
+          | Expr :* Expr | Expr :/ Expr 
+          | V [Char]
+          | Let String Expr Expr      
+     deriving Show
+     
 -- 4
 -- 5
 -- 6
