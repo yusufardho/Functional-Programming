@@ -1,8 +1,12 @@
 -- A: Bahasa Aritmatika Sederhana
 
-
-
 -- 1
+data Tree a = Leaf a 
+    | Branch (Tree a) (Tree a)
+
+mapTree::(a -> b) -> Tree a -> Tree b
+mapTree f (Leaf x) = Leaf (f x)
+mapTree f (Branch t1 t2) = Branch (mapTree f t1) (mapTree f t2)
 
 -- 2
 subst :: String -> Expr -> Expr -> Expr
@@ -36,7 +40,7 @@ data Expr = C Float | Expr :+ Expr | Expr :- Expr
           | V [Char]
           | Let String Expr Expr      
      deriving Show
-     
+
 -- 4
 -- 5
 -- 6
