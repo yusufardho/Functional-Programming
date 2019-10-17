@@ -4,9 +4,15 @@
 data Tree a = Leaf a 
     | Branch (Tree a) (Tree a)
 
-mapTree::(a -> b) -> Tree a -> Tree b
+mapTree :: (a -> b) -> Tree a -> Tree b
 mapTree f (Leaf x) = Leaf (f x)
 mapTree f (Branch t1 t2) = Branch (mapTree f t1) (mapTree f t2)
+
+foldTree :: (a -> a -> a) -> (b -> a) -> Tree b -> a
+foldTree combine leafFn (Leaf x) = leafFn x
+foldTree combine leafFn (Branch t1 t2) = 
+    combine (foldTree combine leafFn t1)
+            (foldTree combine leafFn t2)
 
 -- 2
 subst :: String -> Expr -> Expr -> Expr
