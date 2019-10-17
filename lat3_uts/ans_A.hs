@@ -27,6 +27,13 @@ evaluate (e1 :/ e2)    = evaluate e1 / evaluate e2
 evaluate (Let v e0 e1) = evaluate (subst v e0 e1)
 evaluate (V v)         = 0.0 
 
+-- ilustrasi:
+-- evaluate (Let "y" (C 9) (Let "x" (C 5) (V "x" :+ V "y" :+ C 7)))
+-- evaluate (Let "x" (C 5) (V "x" :+ C 9 :+ C 7))
+-- evaluate (subst "x" (C 5) (V "x" :+ V "y" :+ C 7)))
+-- evaluate (C 5 :+ C 9 :+ C 7)))
+-- 21
+
 -- 3
 -- 4
 -- 5
