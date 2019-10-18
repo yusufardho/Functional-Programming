@@ -55,6 +55,28 @@ add (a:as) (b:bs) = (a+b) : (add as bs)
 
 fibs  =  1 : 1 : add fibs (tail fibs)
 
+-- cari element terakhir di list
+myLast :: [a] -> a
+myLast [x] = x
+myLast (_:xs) = myLast xs
+
+-- cari element terakhir ke-2 di list
+myButLast [x,_]  = x
+myButLast (_:xs) = myButLast xs
+
+-- cek palindrome
+isPalindrome :: (Eq a) => [a] -> Bool
+isPalindrome xs = xs == (reverse xs)
+
+-- reverse list menggunakan fold
+reverseF :: [a] -> [a]
+reverseF = foldl (flip (:)) []
+
+-- kompres
+compress (x:[]) = [x]
+compress (x:xs) = if (x == head xs) then (compress xs) else x : (compress xs)
+compress' x = reverse $ foldl (\a b -> if (head a) == b then a else b:a) [head x] x
+
 -- op \\
 -- >>> [1,2,3] \\ [2]
 -- [1,3]
