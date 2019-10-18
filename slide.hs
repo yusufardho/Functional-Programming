@@ -50,6 +50,11 @@ compo x = (double . square) x -- = double(square(x))
         double x = x+x
         square x = x*x
 
+add [] []         = []
+add (a:as) (b:bs) = (a+b) : (add as bs)
+
+fibs  =  1 : 1 : add fibs (tail fibs)
+
 -- op \\
 -- >>> [1,2,3] \\ [2]
 -- [1,3]
