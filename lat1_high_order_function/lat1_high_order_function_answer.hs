@@ -15,6 +15,9 @@ iter 0 f x = x
 iter n f x = f (iter (n-1) f x)
 
 -- 1.4
+-- \n -> iter n succ
+-- type: Enum a => Int -> a -> a
+-- effect: increase a value by one in n times, succ in the successor function
 
 -- 1.5 
 -- How would you define the sum of the squares of the natural numbers 
@@ -23,6 +26,11 @@ sumSquares :: Integer -> Integer
 sumSquares n = foldr (+) 0 (map (\x -> x*x) [1..n])
 
 -- 1.6
+mystery xs = foldr (++) [] (map sing xs)
+  where
+    sing x = [x]
+-- the function maps each element into a single-valued array that contains the element itself
+-- and then concatenate each array so the result would be the same as the input array
 
 -- 1.7
 -- If id is the polymorphic identity function, defined by id x = x, 
